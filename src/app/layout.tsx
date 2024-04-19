@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter } from "next/font/";
 import "./globals.css";
+import Header from "@/components/layout/header/Header";
+import Footer from "@/components/layout/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,67 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header>
-          {/* header без аутентифакации */}
-          <nav>
-            <div>
-              <a href="./">Conduit</a>
-              <ul>
-                <li>
-                  <a href="/">Home</a>
-                </li>
-                <li>
-                  <a href="/">Sign in</a>
-                </li>
-                <li>
-                  <a href="/">Sign up</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <div>
-            <h1>Conduit</h1>
-            <h2>A place to share your knowledge|</h2>
-          </div>
-        </header>
-        {/* <header>
-          //header с аутентифакацией 
-          <nav>
-            <div>
-              <a href="./">Conduit</a>
-              <ul>
-                <li>
-                  <a href="/">Home</a>
-                </li>
-                <li>
-                  <a href="/">New Article</a>
-                </li>
-                <li>
-                  <a href="/">Settings</a>
-                </li>
-                <li>
-                  <a href="/">
-                    <img src="" alt="profile-photo" />
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <div>
-            <h1>Conduit</h1>
-            <h2>A place to share your knowledge|</h2>
-          </div>
-        </header> */}
+        <Header/>
         {children}
-        <footer>
-          <div>
-            <a href="/">Conduit</a>
-          </div>
-          <p>
-            An interactive learning project from Thinkster. Code & design
-            licensed under MIT.
-          </p>
-        </footer>
+        <Footer />
       </body>
     </html>
   );
