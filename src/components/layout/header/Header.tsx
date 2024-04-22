@@ -1,44 +1,54 @@
+import s from './style.module.scss';
+
 export default function Header() {
   return (
-    <section>
-      <header>
-        {/* header без аутентифакации */}
-        <nav>
-          <div>
-            <a href="/">Conduit</a>
-            <ul>
-              <li>
-                <a href="/">Home</a>
-              </li>
-              <li>
-                <a href="/">Sign in</a>
-              </li>
-              <li>
-                <a href="/">Sign up</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-      
-{/* <header>
+<header>
+      {/* header без аутентифакации */}
+      <nav className={`${s.navbar} ${s.navbarLight}`}>
+        <div className={s.container}>
+          <a className={s.navbarBrand} href="/">
+            conduit
+          </a>
+          <ul className={`${s.nav} ${s.navbarNav} ${s.pullXsRight}`}>
+            <li className={s.navItem}>
+              <a className={` ${s.navLink} ${s.navLinkActive}`} href="/">
+                Home
+              </a>
+            </li>
+            <li className={s.navItem}>
+              <a className={s.navLink} href="/sign-in">
+                Sign in
+              </a>
+            </li>
+            <li className={s.navItem}>
+              <a className={s.navLink} href="/sign-up">
+                Sign up
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      {/* <header>
 //header с аутентифакацией 
-<nav>А
-  <div>
-    <a href="./">Conduit</a>
-    <ul>
-      <li>
-        <a href="/">Home</a>
+<nav className="navbar navbar-light">
+  <div className="container">
+    <a className="navbar-brand" href="/">conduit</a>
+    <ul className="nav navbar-nav pull-xs-right">
+      <li className="nav-item">
+        <!-- Add "active" className when you're on that page" -->
+        <a className="nav-link active" href="/">Home</a>
       </li>
-      <li>
-        <a href="/">New Article</a>
+      <li className="nav-item">
+        <a className="nav-link" href="/editor"> <i className="ion-compose"></i>&nbsp;New Article </a>
       </li>
-      <li>
-        <a href="/">Settings</a>
+      <li className="nav-item">
+        <a className="nav-link" href="/settings"> <i className="ion-gear-a"></i>&nbsp;Settings </a>
       </li>
-      <li>
-        <a href="/">
-          <img src="" alt="profile-photo" />
+      <li className="nav-item">
+        <a className="nav-link" href="/profile/eric-simons">
+          <img src="" className="user-pic" />
+          Eric Simons
         </a>
       </li>
     </ul>
@@ -49,6 +59,6 @@ export default function Header() {
   <h2>A place to share your knowledge</h2>
 </div>
 </header> */}
-    </section>
+    </header>
   );
 }

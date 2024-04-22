@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.navbarLight {
+}
+
+.container {
+}
+
+.navbarBrand {
+  text-decoration: none;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem !important;
+  padding-top: 0 !important;
+  color: #5cb85c !important;
+}
+
+.nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  list-style: none;
+  flex-wrap: wrap;
+  line-height: 0.5;
+  padding-inline-start: 0;
+  padding-left: 0;
+
+  @media (max-width: 300px) {
+    line-height: 1.5;
+  }
+}
+
+.navbar {
+  position: relative;
+  padding: 0.5rem 1rem;
+  /* background-color: rgb(234, 178, 178); */
+  background-color: #fff;
+  margin: 0;
+  /* font-family: "Titillium Web", sans-serif; */
+}
+
+.navItem:nth-child(1),
+.navItem:nth-child(2) {
+  margin-right: 10px;
+}
+
+.navLink {
+  color: #0000004d;
+  text-decoration: none;
+  padding-top: 0.425rem;
+  padding-bottom: 0.425rem;
+  // не работет
+  font-family: "source sans pro", serif;
+  font-size: 16px;
+}
+
+.navLinkActive {
+  color: #000c;
+}

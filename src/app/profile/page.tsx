@@ -1,57 +1,42 @@
-import Image from "next/image";
-import s from "./page.module.scss";
-
-// export default function Home() {
-//   return (
-//     <main className={styles.main}>
-//       <div>
-//         <h1>Conduit</h1>
-//         <h2>A place to share your knowledge</h2>
-//       </div>
-//       <div>
-//         <section>
-//           <div>Center nav block, and added tags</div>
-//           <ul>
-//             <li>
-//               {/* ВРЕМЕННАЯ КОНСТАНТНАЯ ССЫЛКА */}
-//               <a href="/article/1">Atricle</a>
-//             </li>
-//           </ul>
-//         </section>
-//         <aside>
-//           <p>Popular Tags</p>
-//           <div></div>
-//         </aside>
-//       </div>
-//     </main>
-//   );
-// }
-
-export default function Home() {
+export default function Profile() {
   return (
-    <div className="home-page">
-      <section>
-        <div className={s.banner}>
-          <div className={s.container}>
-            <h1 className={s.logoFont}>conduit</h1>
-            <p className={s.logoText}>A place to share your knowledge.</p>
+    <div className="profile-page">
+      <div className="user-info">
+        <div className="container">
+          <div className="row">
+            <div className="col-xs-12 col-md-10 offset-md-1">
+              <img src="http://i.imgur.com/Qr71crq.jpg" className="user-img" />
+              <h4>Eric Simons</h4>
+              <p>
+                Cofounder @GoThinkster, lived in Aol{`'`}s HQ for a few months,
+                kinda looks like Peeta from the Hunger Games
+              </p>
+              <button className="btn btn-sm btn-outline-secondary action-btn">
+                <i className="ion-plus-round"></i>
+                &nbsp; Follow Eric Simons
+              </button>
+              <button className="btn btn-sm btn-outline-secondary action-btn">
+                <i className="ion-gear-a"></i>
+                &nbsp; Edit Profile Settings
+              </button>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <div className="container page">
+      <div className="container">
         <div className="row">
-          <div className="col-md-9">
-            <div className="feed-toggle">
+          <div className="col-xs-12 col-md-10 offset-md-1">
+            <div className="articles-toggle">
               <ul className="nav nav-pills outline-active">
                 <li className="nav-item">
-                  <a className="nav-link" href="">
-                    Your Feed
+                  <a className="nav-link active" href="">
+                    My Articles
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" href="">
-                    Global Feed
+                  <a className="nav-link" href="">
+                    Favorited Articles
                   </a>
                 </li>
               </ul>
@@ -73,7 +58,7 @@ export default function Home() {
                 </button>
               </div>
               <a
-                href="/article/how-to-build-webapps-that-scale"
+                href="/article/how-to-buil-webapps-that-scale"
                 className="preview-link"
               >
                 <h1>How to build webapps that scale</h1>
@@ -113,12 +98,8 @@ export default function Home() {
                 <p>This is the description for the post.</p>
                 <span>Read more...</span>
                 <ul className="tag-list">
-                  <li className="tag-default tag-pill tag-outline">
-                    realworld
-                  </li>
-                  <li className="tag-default tag-pill tag-outline">
-                    implementations
-                  </li>
+                  <li className="tag-default tag-pill tag-outline">Music</li>
+                  <li className="tag-default tag-pill tag-outline">Song</li>
                 </ul>
               </a>
             </div>
@@ -135,39 +116,6 @@ export default function Home() {
                 </a>
               </li>
             </ul>
-          </div>
-
-          <div className="col-md-3">
-            <div className="sidebar">
-              <p>Popular Tags</p>
-
-              <div className="tag-list">
-                <a href="" className="tag-pill tag-default">
-                  programming
-                </a>
-                <a href="" className="tag-pill tag-default">
-                  javascript
-                </a>
-                <a href="" className="tag-pill tag-default">
-                  emberjs
-                </a>
-                <a href="" className="tag-pill tag-default">
-                  angularjs
-                </a>
-                <a href="" className="tag-pill tag-default">
-                  react
-                </a>
-                <a href="" className="tag-pill tag-default">
-                  mean
-                </a>
-                <a href="" className="tag-pill tag-default">
-                  node
-                </a>
-                <a href="" className="tag-pill tag-default">
-                  rails
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>

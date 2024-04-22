@@ -1,0 +1,46 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.banner {
+  background-color: #5cb85c;
+  box-shadow: inset 0 8px 8px -8px #0000004d, inset 0 -8px 8px -8px #0000004d;
+  // font-family: ;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoFont {
+  margin: 0;
+  font-weight: 500;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  font-weight: 700 !important;
+  font-size: 3.5rem;
+}
+
+.logoText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 300 !important;
+  flex-wrap: wrap;
+}
