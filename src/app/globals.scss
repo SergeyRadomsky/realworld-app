@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "TitilliumWeb";
+  src: url("../assets/fonts/TitilliumWeb-Black.ttf") format("ttf"),
+       url("../assets/fonts/TitilliumWeb-Bold.ttf") format("ttf"),
+       url("../assets/fonts/TitilliumWeb-ExtraLight.ttf") format("ttf"),
+       url("../assets/fonts/TitilliumWeb-Light.ttf") format("ttf"),
+       url("../assets/fonts/TitilliumWeb-Regular.ttf") format("ttf"),
+       url("../assets/fonts/TitilliumWeb-SemiBold.ttf") format("ttf");       
+  /* Добавьте форматы шрифтов и пути к файлам шрифтов */
+}
+
+@font-face {
+  font-family: "Source sans Pro";
+  src: url("../assets/fonts/SourceSans3-SemiBold.ttf") format("ttf"),
+       url("../assets/fonts/SourceSans3-Bold.ttf") format("ttf"),
+       url("../assets/fonts/SourceSans3-Light.ttf") format("ttf"),
+       url("../assets/fonts/SourceSans3-Black.ttf") format("ttf"),
+       url("../assets/fonts/SourceSans3-ExtraBold.ttf") format("ttf"),
+       url("../assets/fonts/SourceSans3-ExtraLight.ttf") format("ttf"),
+       url("../assets/fonts/SourceSans3-Medium.ttf") format("ttf");
+  /* Добавьте форматы шрифтов и пути к файлам шрифтов */
+}
+
+.body {
+  margin: 0;
+  // font-family: "TitilliumWeb", sans-serif;
+  font-family: "SourceSans3-Medium", sans-serif;
+    font-size: 1rem;
+    /* line-height: 1.5; */
+    color: #373a3c;
+}
+
+img {
+  display: inline-block;
+  vertical-align: middle;
+  height: 32px;
+  width: 32px;
+  border-radius: 30px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  // color: ;
+  color: #373a3c;
+  text-decoration: none;
+}
+
+// p {
+//   color: blue;
+// }
+
+span {
+  // color: rgb(0, 255, 8);
+}
+
+// @font-face {
+//   font-family: ;
+//   src: url();
+// }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 // import { Inter } from "next/font/google";
-import s from "./globals.module.scss";
+import "./globals.scss";
+// import "./globals.module.scss";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
 import Head from "next/head";
@@ -30,19 +31,10 @@ export default function RootLayout({
     // </>
 
     <html lang="en">
-      <Head>
-        {/* СТИЛИ */}
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+      {/* <Head>
+      </Head> */}
       {/* <body className={`${s.body} ${inter.className}`}> */}
-      <body className={s.body}>
+      <body className="body">
         <Header />
         {children}
         <Footer />

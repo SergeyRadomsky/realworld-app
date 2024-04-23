@@ -39,34 +39,34 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="container page">
-        <div className="row">
-          <div className="col-md-9">
+      <div className={`${s.container} ${s.page}`}>
+        <div className={s.row}>
+          <div className={s.content}>
             <div className="feed-toggle">
-              <ul className="nav nav-pills outline-active">
+              <ul className={`${s.navContent} ${s.navPills} ${s.outlineActive}`}>
                 <li className="nav-item">
-                  <a className="nav-link" href="">
-                    Your Feed
+                  <a className={`${s.navLink} ${s.navLinkActive}`}  href="">
+                    Global Feed
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" href="">
-                    Global Feed
+                  <a className= {`${s.navLink}`} href="">
+                    Your Feed
                   </a>
                 </li>
               </ul>
             </div>
 
-            <div className="article-preview">
-              <div className="article-meta">
+            <div className={s.articlePreview}>
+              <div className={s.articleMeta}>
                 <a href="/profile/eric-simons">
                   <img src="http://i.imgur.com/Qr71crq.jpg" />
                 </a>
-                <div className="info">
-                  <a href="/profile/eric-simons" className="author">
+                <div className={s.info}>
+                  <a href="/profile/eric-simons" className={s.author}>
                     Eric Simons
                   </a>
-                  <span className="date">January 20th</span>
+                  <span className={s.date}>January 20th</span>
                 </div>
                 <button className="btn btn-outline-primary btn-sm pull-xs-right">
                   <i className="ion-heart"></i> 29
@@ -107,8 +107,9 @@ export default function Home() {
               </div>
               <a href="/article/the-song-you" className="preview-link">
                 <h1>
-                  The song you won{`'`}t ever stop singing. No matter how hard
-                  you try.
+                  The song you won{`'`}t ever stop singing. 
+                  {/* No matter how hard
+                  you try. */}
                 </h1>
                 <p>This is the description for the post.</p>
                 <span>Read more...</span>
@@ -137,11 +138,11 @@ export default function Home() {
             </ul>
           </div>
 
-          <div className="col-md-3">
+          <div className={s.asideFilterContent}>
             <div className="sidebar">
               <p>Popular Tags</p>
 
-              <div className="tag-list">
+              <div className={s.tagList}>
                 <a href="" className="tag-pill tag-default">
                   programming
                 </a>

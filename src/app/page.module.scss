@@ -23,11 +23,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
 }
 
 .logoFont {
   margin: 0;
-  font-weight: 500;
+  font-family: "TitilliumWeb", sans-serif;
+  // font-weight: 500;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   font-weight: 700 !important;
   font-size: 3.5rem;
@@ -43,4 +47,81 @@
   font-size: 1.5rem;
   font-weight: 300 !important;
   flex-wrap: wrap;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+}
+
+.page {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 32px;
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+}
+
+.content {
+  @media (min-width: 768px) {
+    // position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 55%;
+    // max-width: 75%;
+  }
+}
+
+.asideFilterContent {
+  @media (min-width: 768px) {
+    // position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navContent {
+  display: flex;
+  flex-direction: row;
+  padding-inline-start: 0px;
+  margin: 0px;
+  padding: 7px 0px;
+}
+.navLink {
+  color: #aaa;
+  padding: 8px 16px;
+  border-radius: 0;
+  border: none;
+  // :hover {
+  //   color: #d90e0e;
+  // }
+}
+
+.navLinkActive {
+  border-radius: 0;
+  border-bottom: 1px solid #5cb85c;
+  color: #5cb85c;
+}
+
+
+
+
+.articlePreview {
+  border-top: 1px solid rgba(0, 0, 0, .1);
+  padding: 1.5rem 0;
 }
