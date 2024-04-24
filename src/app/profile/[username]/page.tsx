@@ -1,4 +1,41 @@
-export default function Profile() {
+import { ARTICLES } from "@/utils/constants/mocks";
+
+type Props = {
+  params: {
+    username: string;
+  };
+};
+
+type ProfileProps = {
+  profile: {
+    username: string;
+    bio: string;
+    image: string;
+    following: boolean;
+  };
+};
+
+export default function Profile({ params: { username } }: Props) {
+  const selectedProfile = ARTICLES.articles.find(
+    (article) => article.author.username === username
+  );
+
+  if (!selectedProfile) {
+    return <div>Пользователь {username} не найден</div>;
+  }
+  
+  const {
+    title,
+    description,
+    body,
+    tagList,
+    createdAt,
+    updatedAt,
+    favorited,
+    favoritesCount,
+    author,
+  } = selectedProfile;
+  
   return (
     <div className="profile-page">
       <div className="user-info">
@@ -6,7 +43,7 @@ export default function Profile() {
           <div className="row">
             <div className="col-xs-12 col-md-10 offset-md-1">
               <img src="http://i.imgur.com/Qr71crq.jpg" className="user-img" />
-              <h4>Eric Simons</h4>
+              <h4>${author.username}</h4>
               <p>
                 Cofounder @GoThinkster, lived in Aol{`'`}s HQ for a few months,
                 kinda looks like Peeta from the Hunger Games

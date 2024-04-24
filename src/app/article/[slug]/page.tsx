@@ -1,13 +1,57 @@
+"use client";
+
+import { ARTICLES } from "@/utils/constants/mocks";
+
 type Props = {
   params: {
-    id: string;
+    slug: string;
   };
 };
 
-export default function Article({ params: { id } }: Props) {
+type ArticleProps = {
+  article: {
+    slug: string;
+    title: string;
+    description: string;
+    body: string;
+    tagList: string[];
+    createdAt: string;
+    updatedAt: string;
+    favorited: boolean;
+    favoritesCount: number;
+    author: {
+      username: string;
+      bio: string;
+      image: string;
+      following: boolean;
+    };
+  };
+};
+
+export default function Article({ params: { slug } }: Props) {
+  const selectedArticle = ARTICLES.articles.find(
+    (article) => article.slug === slug
+  );
+
+  if (!selectedArticle) {
+    return <div>Статья не найдена</div>;
+  }
+
+  const {
+    title,
+    description,
+    body,
+    tagList,
+    createdAt,
+    updatedAt,
+    favorited,
+    favoritesCount,
+    author,
+  } = selectedArticle;
+
   return (
     <>
-      <div>статья ${id}</div>
+      <div>статья ${title}</div>
       <div className="article-page">
         <div className="banner">
           <div className="container">

@@ -1,5 +1,8 @@
+"use client";
 import Image from "next/image";
 import s from "./page.module.scss";
+import Article from "./article/[slug]/page";
+import { ARTICLES } from "@/utils/constants/mocks";
 
 // export default function Home() {
 //   return (
@@ -27,6 +30,7 @@ import s from "./page.module.scss";
 //   );
 // }
 
+
 export default function Home() {
   return (
     <div className="home-page">
@@ -43,21 +47,63 @@ export default function Home() {
         <div className={s.row}>
           <div className={s.content}>
             <div className="feed-toggle">
-              <ul className={`${s.navContent} ${s.navPills} ${s.outlineActive}`}>
+              <ul
+                className={`${s.navContent} ${s.navPills} ${s.outlineActive}`}
+              >
                 <li className="nav-item">
-                  <a className={`${s.navLink} ${s.navLinkActive}`}  href="">
+                  <a className={`${s.navLink} ${s.navLinkActive}`} href="">
                     Global Feed
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className= {`${s.navLink}`} href="">
+                  <a className={`${s.navLink}`} href="">
                     Your Feed
                   </a>
                 </li>
               </ul>
             </div>
 
-            <div className={s.articlePreview}>
+            {ARTICLES.articles.map((article) => (
+              <div key={article.slug} className={s.articlePreview}>
+                <div className={s.articleMeta}>
+                  <a href={`/profile/${article.author.username}`}>
+                    <img
+                      src={article.author.image}
+                      alt={article.author.username}
+                    />
+                  </a>
+                  <div className={s.info}>
+                    <a
+                      href={`/profile/${article.author.username}`}
+                      className={s.author}
+                    >
+                      {article.author.username}
+                    </a>
+                    <span className={s.date}>{article.createdAt}</span>
+                  </div>
+                  <button className="btn btn-outline-primary btn-sm pull-xs-right">
+                    <i className="ion-heart"></i> {article.favoritesCount}
+                  </button>
+                </div>
+                <a href={`/article/${article.slug}`} className="preview-link">
+                  <h1>{article.title}</h1>
+                  <p>{article.description}</p>
+                  <span>Read more...</span>
+                  <ul className="tag-list">
+                    {article.tagList.map((tag) => (
+                      <li
+                        key={tag}
+                        className="tag-default tag-pill tag-outline"
+                      >
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                </a>
+              </div>
+            ))}
+
+            {/* <div className={s.articlePreview}>
               <div className={s.articleMeta}>
                 <a href="/profile/eric-simons">
                   <img src="http://i.imgur.com/Qr71crq.jpg" />
@@ -88,9 +134,9 @@ export default function Home() {
                   </li>
                 </ul>
               </a>
-            </div>
+            </div> */}
 
-            <div className="article-preview">
+            {/* <div className="article-preview">
               <div className="article-meta">
                 <a href="/profile/albert-pai">
                   <img src="http://i.imgur.com/N4VcUeJ.jpg" />
@@ -107,9 +153,9 @@ export default function Home() {
               </div>
               <a href="/article/the-song-you" className="preview-link">
                 <h1>
-                  The song you won{`'`}t ever stop singing. 
-                  {/* No matter how hard
-                  you try. */}
+                  The song you won{`'`}t ever stop singing.
+                  No matter how hard
+                  you try.
                 </h1>
                 <p>This is the description for the post.</p>
                 <span>Read more...</span>
@@ -122,7 +168,7 @@ export default function Home() {
                   </li>
                 </ul>
               </a>
-            </div>
+            </div> */}
 
             <ul className="pagination">
               <li className="page-item active">
