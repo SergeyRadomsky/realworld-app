@@ -1,5 +1,6 @@
 import s from './style.module.scss';
 
+
 export default function Header() {
   return (
 <header>
@@ -23,6 +24,21 @@ export default function Header() {
             <li className={s.navItem}>
               <a className={s.navLink} href="/sign-up">
                 Sign up
+              </a>
+            </li>
+            <li className={s.navItem}>
+              <a className={s.navLink} href="/editor">
+                New Article
+              </a>
+            </li>
+            <li className={s.navItem}>
+              <a className={s.navLink} href="/settings">
+                Settings
+              </a>
+            </li>
+            <li className={s.navItem}>
+              <a className={s.navLink} href="/profile/jake">
+                Profile
               </a>
             </li>
           </ul>

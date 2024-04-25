@@ -4,7 +4,7 @@ import "./globals.scss";
 // import "./globals.module.scss";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
-import Head from "next/head";
+// import Head from "next/head";
 
 // const inter = Inter({ subsets: ["latin"] });
 

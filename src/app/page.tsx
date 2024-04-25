@@ -1,7 +1,6 @@
-"use client";
+// "use client";
 import Image from "next/image";
 import s from "./page.module.scss";
-import Article from "./article/[slug]/page";
 import { ARTICLES } from "@/utils/constants/mocks";
 
 // export default function Home() {
@@ -30,8 +29,20 @@ import { ARTICLES } from "@/utils/constants/mocks";
 //   );
 // }
 
-
 export default function Home() {
+  // {
+  //   searchParams,
+  // }: {
+  //   searchParams: { [key: string]: string | string[] | undefined };
+  // }) {
+  //   const page = searchParams["page"] ?? "1";
+  //   const per_Page = searchParams["per_page"] ?? "5";
+  
+  //   const start = (Number(page) - 1) * Number(per_Page); //0, 5, 10, ...
+  //   const end = start + Number(per_Page); // 5, 10, 15 ////
+  
+  //   const entries = ARTICLES.articles.slice(start, end);
+  
   return (
     <div className="home-page">
       <section>
@@ -102,81 +113,21 @@ export default function Home() {
                 </a>
               </div>
             ))}
-
-            {/* <div className={s.articlePreview}>
-              <div className={s.articleMeta}>
-                <a href="/profile/eric-simons">
-                  <img src="http://i.imgur.com/Qr71crq.jpg" />
-                </a>
-                <div className={s.info}>
-                  <a href="/profile/eric-simons" className={s.author}>
-                    Eric Simons
-                  </a>
-                  <span className={s.date}>January 20th</span>
-                </div>
-                <button className="btn btn-outline-primary btn-sm pull-xs-right">
-                  <i className="ion-heart"></i> 29
-                </button>
-              </div>
-              <a
-                href="/article/how-to-build-webapps-that-scale"
-                className="preview-link"
-              >
-                <h1>How to build webapps that scale</h1>
-                <p>This is the description for the post.</p>
-                <span>Read more...</span>
-                <ul className="tag-list">
-                  <li className="tag-default tag-pill tag-outline">
-                    realworld
-                  </li>
-                  <li className="tag-default tag-pill tag-outline">
-                    implementations
-                  </li>
-                </ul>
-              </a>
-            </div> */}
-
-            {/* <div className="article-preview">
-              <div className="article-meta">
-                <a href="/profile/albert-pai">
-                  <img src="http://i.imgur.com/N4VcUeJ.jpg" />
-                </a>
-                <div className="info">
-                  <a href="/profile/albert-pai" className="author">
-                    Albert Pai
-                  </a>
-                  <span className="date">January 20th</span>
-                </div>
-                <button className="btn btn-outline-primary btn-sm pull-xs-right">
-                  <i className="ion-heart"></i> 32
-                </button>
-              </div>
-              <a href="/article/the-song-you" className="preview-link">
-                <h1>
-                  The song you won{`'`}t ever stop singing.
-                  No matter how hard
-                  you try.
-                </h1>
-                <p>This is the description for the post.</p>
-                <span>Read more...</span>
-                <ul className="tag-list">
-                  <li className="tag-default tag-pill tag-outline">
-                    realworld
-                  </li>
-                  <li className="tag-default tag-pill tag-outline">
-                    implementations
-                  </li>
-                </ul>
-              </a>
-            </div> */}
-
+            {/* ПАГИНАЦИЯ */}
             <ul className="pagination">
+              {/* {entries.map((entry) => (
+                <li key={entry.slug} className="page-item active">
+                  <a className="page-link" href="">
+                    {entry.slug}
+                  </a>
+                </li>
+              ))} */}
               <li className="page-item active">
                 <a className="page-link" href="">
                   1
                 </a>
               </li>
-              <li className="page-item">
+              <li className="page-item active">
                 <a className="page-link" href="">
                   2
                 </a>
