@@ -90,11 +90,6 @@
   }
 }
 
-.tagList {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .navContent {
   display: flex;
   flex-direction: row;
@@ -116,12 +111,4 @@
   border-radius: 0;
   border-bottom: 1px solid #5cb85c;
   color: #5cb85c;
-}
-
-
-
-
-.articlePreview {
-  border-top: 1px solid rgba(0, 0, 0, .1);
-  padding: 1.5rem 0;
 }

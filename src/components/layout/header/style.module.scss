@@ -44,10 +44,10 @@
   /* font-family: "Titillium Web", sans-serif; */
 }
 
-.navItem:nth-child(1),
-.navItem:nth-child(2) {
-  margin-right: 10px;
-}
+// .navItem:nth-child(1),
+// .navItem:nth-child(2) {
+//   margin-right: 10px;
+// }
 
 .navLink {
   color: #0000004d;
@@ -57,6 +57,7 @@
   // не работет
   font-family: "source sans pro", serif;
   font-size: 16px;
+  margin-right: 16px;
 }
 
 .navLinkActive {

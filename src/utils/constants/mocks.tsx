@@ -5,7 +5,7 @@ export const ARTICLES = {
       title: "How to train your dragon",
       description: "Ever wonder how?",
       body: "It takes a Jacobian a defg aserfhrehswrth wrtg hwrtghnj rgnjesg et  defg aserfhrehswrth wrtg hwrtghnj rgnjesg et defg aserfhrehswrth wrtg hwrtghnj rgnjesg et",
-      tagList: ["dragons", "training"],
+      tagList: ["javascript", "react"],
       createdAt: "2016-02-18T03:22:56.637Z",
       updatedAt: "2016-02-18T03:48:35.824Z",
       favorited: false,
@@ -22,7 +22,7 @@ export const ARTICLES = {
       title: "How to train your dragon 2",
       description: "So toothless",
       body: "It a dragon",
-      tagList: ["dragons", "training"],
+      tagList: ["angularjs", "react"],
       createdAt: "2016-02-18T03:22:56.637Z",
       updatedAt: "2016-02-18T03:48:35.824Z",
       favorited: false,
@@ -39,7 +39,7 @@ export const ARTICLES = {
       title: "How to train your dragon 3",
       description: "So toothless",
       body: "It a dragon",
-      tagList: ["dragons", "training"],
+      tagList: ["qwe", "angularjs"],
       createdAt: "2016-02-18T03:22:56.637Z",
       updatedAt: "2016-02-18T03:48:35.824Z",
       favorited: false,
@@ -56,7 +56,7 @@ export const ARTICLES = {
       title: "How to train your dragon 4",
       description: "So toothless",
       body: "It a dragon",
-      tagList: ["dragons", "training"],
+      tagList: ["dragons", "javascript"],
       createdAt: "2016-02-18T03:22:56.637Z",
       updatedAt: "2016-02-18T03:48:35.824Z",
       favorited: false,
@@ -73,7 +73,7 @@ export const ARTICLES = {
       title: "How to train your dragon 5",
       description: "So toothless",
       body: "It a dragon",
-      tagList: ["dragons", "training"],
+      tagList: ["mean", "javascript"],
       createdAt: "2016-02-18T03:22:56.637Z",
       updatedAt: "2016-02-18T03:48:35.824Z",
       favorited: false,
@@ -90,7 +90,7 @@ export const ARTICLES = {
       title: "How to train your dragon 6",
       description: "So toothless",
       body: "It a dragon",
-      tagList: ["dragons", "training"],
+      tagList: ["react", "programming"],
       createdAt: "2016-02-18T03:22:56.637Z",
       updatedAt: "2016-02-18T03:48:35.824Z",
       favorited: false,
@@ -123,6 +123,19 @@ export const USER = {
     bio: "I work at statefarm",
     image: null,
   },
+};
+
+export const TAGS = {
+  tags: [
+    "programming",
+    "javascript",
+    "emberjs",
+    "angularjs",
+    "react",
+    "mean",
+    "node",
+    "rails",
+  ],
 };
 
 export const COMMENTS = {
