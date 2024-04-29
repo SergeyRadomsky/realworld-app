@@ -1,5 +1,32 @@
+.sidebar {
+  padding: 5px 10px 10px;
+  background: #f3f3f3;
+  border-radius: 4px;
+}
 
 .tagList {
   display: flex;
   flex-wrap: wrap;
+}
+
+.tagPill {
+  padding-right: 0.9em;
+  padding-left: 0.6em;
+  border-radius: 10rem;
+}
+
+.tagDefault {
+  color: #fff !important;
+  background-color: #818a91;
+  font-size: 0.8rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.1rem;
+  white-space: nowrap;
+  margin-right: 3px;
+  margin-bottom: 0.2rem;
+  display: inline-block;
+}
+
+.tag-default[href]:hover {
+  background-color: #687077;
 }
