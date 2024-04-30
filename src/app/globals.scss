@@ -21,6 +21,12 @@
   /* Добавьте форматы шрифтов и пути к файлам шрифтов */
 }
 
+html {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
 .body {
   margin: 0;
   // font-family: "TitilliumWeb", sans-serif;
@@ -28,6 +34,10 @@
     font-size: 1rem;
     /* line-height: 1.5; */
     color: #373a3c;
+    // display: flex;
+    // flex-direction: column;
+
+
 }
 
 img {
@@ -55,6 +65,8 @@ a {
 span {
   // color: rgb(0, 255, 8);
 }
+
+
 
 // @font-face {
 //   font-family: ;

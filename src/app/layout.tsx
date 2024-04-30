@@ -35,6 +35,7 @@ export default function RootLayout({
       </Head> */}
       {/* <body className={`${s.body} ${inter.className}`}> */}
       <body className="body">
+        {/* <body className={s.body}> */}
         <Header />
         {children}
         <Footer />

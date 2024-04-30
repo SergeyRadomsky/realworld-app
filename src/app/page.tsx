@@ -4,6 +4,7 @@ import s from "./page.module.scss";
 import { ARTICLES, TAGS } from "@/utils/constants/mocks";
 import { Article } from "@/components/articleMini/article";
 import { Tags } from "@/components/tags/tags";
+import { Pagination } from "@/components/pagination/pagination";
 // export default function Home() {
 //   return (
 //     <main className={styles.main}>
@@ -82,25 +83,7 @@ export default function Home(props: any) {
               <Article key={article.slug} article={article} />
             ))}
             {/* ПАГИНАЦИЯ */}
-            <ul className="pagination">
-              {/* {entries.map((entry) => (
-                <li key={entry.slug} className="page-item active">
-                  <a className="page-link" href="">
-                    {entry.slug}
-                  </a>
-                </li>
-              ))} */}
-              <li className="page-item active">
-                <a className="page-link" href="">
-                  1
-                </a>
-              </li>
-              <li className="page-item active">
-                <a className="page-link" href="">
-                  2
-                </a>
-              </li>
-            </ul>
+            <Pagination/>
           </div>
 
           <div className={s.asideFilterContent}>

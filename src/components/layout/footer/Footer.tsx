@@ -1,13 +1,15 @@
+import s from "./style.module.scss";
+
 export default function Footer() {
   return (
-    <footer>
-      <div className="container">
-        <a href="/" className="logo-font">
+    <footer className={s.footer}>
+      <div className={s.container}>
+        <a href="/" className={s.logoFont}>
           conduit
         </a>
-        <span className="attribution">
+        <span className={s.attribution}>
           An interactive learning project from{" "}
-          <a href="https://thinkster.io">Thinkster</a>. Code &amp; design
+          <a className={s.thinkster} href="https://thinkster.io">Thinkster</a>. Code &amp; design
           licensed under MIT.
         </span>
       </div>

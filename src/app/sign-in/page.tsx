@@ -1,7 +1,9 @@
+import s from "./style.module.scss";
+
 export default function SignIn() {
   return (
-    <div className="auth-page">
-      <div className="container page">
+    <div className={s.authPage}>
+      <div className={`${s.container} ${s.page}`}>
         <div className="row">
           <div className="col-md-6 offset-md-3 col-xs-12">
             <h1 className="text-xs-center">Sign in</h1>
@@ -14,14 +16,14 @@ export default function SignIn() {
             </ul>
 
             <form>
-              <fieldset className="form-group">
+              <fieldset className={s.formGroup}>
                 <input
                   className="form-control form-control-lg"
                   type="text"
                   placeholder="Email"
                 />
               </fieldset>
-              <fieldset className="form-group">
+              <fieldset className={s.formGroup}>
                 <input
                   className="form-control form-control-lg"
                   type="password"

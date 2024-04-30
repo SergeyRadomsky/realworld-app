@@ -1,0 +1,45 @@
+.footer {
+  background: #f3f3f3;
+  margin-top: 3rem;
+  padding: 1rem 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 940px;
+  }
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+}
+
+.logoFont {
+  font-family: "TitilliumWeb", sans-serif;
+  font-weight: 700;
+  color: #5cb85c;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.attribution {
+  vertical-align: middle;
+  font-size: 0.8rem;
+  color: #bbb;
+  font-weight: 300;
+}
+
+.thinkster {
+  color: #5cb85c;
+  text-decoration: none;
+}
