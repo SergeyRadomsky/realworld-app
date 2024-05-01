@@ -5,32 +5,33 @@ export default function SignIn() {
     <div className={s.authPage}>
       <div className={`${s.container} ${s.page}`}>
         <div className="row">
-          <div className="col-md-6 offset-md-3 col-xs-12">
-            <h1 className="text-xs-center">Sign in</h1>
-            <p className="text-xs-center">
+          <div className={s.flexContainer}>
+            <h1 className={s.signIn}>Sign in</h1>
+            <p className={s.signUp}>
               <a href="/register">Need an account?</a>
             </p>
 
-            <ul className="error-messages">
+            {/* <ul className="error-messages">
               <li>That email is already taken</li>
-            </ul>
+            </ul> */}
 
             <form>
-              <fieldset className={s.formGroup}>
+              <fieldset className={`${s.formGroup} ${s.formEl}`}>
                 <input
-                  className="form-control form-control-lg"
+                  className={s.formСontrol}
                   type="text"
                   placeholder="Email"
                 />
               </fieldset>
-              <fieldset className={s.formGroup}>
+              <fieldset className={`${s.formGroup} ${s.formEl}`}>
                 <input
-                  className="form-control form-control-lg"
+                  className={s.formСontrol}
                   type="password"
                   placeholder="Password"
                 />
               </fieldset>
-              <button className="btn btn-lg btn-primary pull-xs-right">
+              <button className={`${s.btn} ${s.btnLg} ${s.formEl}`}>
+              {/* <button className="btn btn-lg btn-primary pull-xs-right"> */}
                 Sign in
               </button>
             </form>

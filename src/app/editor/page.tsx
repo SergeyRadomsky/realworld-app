@@ -1,56 +1,74 @@
+"use client";
+
+import { useState } from "react";
+import s from "./style.module.scss";
+
 export default function Editor() {
+  const [tags, setTags] = useState([]);
+
+  const handleInputChange = (e: any) => {
+    const inputText = e.target.value;
+    const inputTags = inputText
+      .split(" ")
+      .filter((tag: any) => tag.trim() !== "");
+    // const inputTags = inputText.split("");
+    setTags(inputTags);
+  };
+
   return (
     <div className="editor-page">
-      <div className="container page">
+      <div className={`${s.container} ${s.page}`}>
         <div className="row">
-          <div className="col-md-10 offset-md-1 col-xs-12">
-            <ul className="error-messages">
+          <div className={s.flexContainer}>
+            {/* <ul className="error-messages">
               <li>That title is required</li>
-            </ul>
+            </ul> */}
 
             <form>
-              <fieldset>
-                <fieldset className="form-group">
-                  <input
-                    type="text"
-                    className="form-control form-control-lg"
-                    placeholder="Article Title"
-                  />
-                </fieldset>
-                <fieldset className="form-group">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="What's this article about?"
-                  />
-                </fieldset>
-                <fieldset className="form-group">
-                  <textarea
-                    className="form-control"
-                    // rows="8"
-                    placeholder="Write your article (in markdown)"
-                  ></textarea>
-                </fieldset>
-                <fieldset className="form-group">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Enter tags"
-                  />
-                  <div className="tag-list">
-                    <span className="tag-default tag-pill">
-                      {" "}
-                      <i className="ion-close-round"></i> tag{" "}
-                    </span>
-                  </div>
-                </fieldset>
-                <button
-                  className="btn btn-lg pull-xs-right btn-primary"
-                  type="button"
-                >
-                  Publish Article
-                </button>
+              {/* <fieldset> */}
+              <fieldset className={`${s.formGroup} ${s.formEl}`}>
+                <input
+                  type="text"
+                  className={s.formControl}
+                  placeholder="Article Title"
+                />
               </fieldset>
+              <fieldset className={`${s.formGroup} ${s.formEl}`}>
+                <input
+                  type="text"
+                  className={s.formControl}
+                  placeholder="What's this article about?"
+                />
+              </fieldset>
+              <fieldset className={`${s.formGroup} ${s.formEl}`}>
+                <textarea
+                  className={s.formControl}
+                  // rows="8"
+                  placeholder="Write your article (in markdown)"
+                ></textarea>
+              </fieldset>
+              <fieldset className={`${s.formGroup} ${s.formEl}`}>
+                <input
+                  type="text"
+                  className={s.formControl}
+                  placeholder="Enter tags"
+                  onChange={handleInputChange}
+                />
+                <div className={s.tagsList}>
+                  {tags.map((tag, index) => (
+                    <span key={index} className={s.tagDefault}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </fieldset>
+              <button
+                className={`${s.btn} ${s.btnLg} ${s.formEl}`}
+                type="button"
+              >
+                Publish Article
+              </button>
+              {/* </fieldset> */}
             </form>
           </div>
         </div>
