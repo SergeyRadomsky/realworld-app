@@ -1,5 +1,6 @@
 "use client";
 
+import s from "./article.module.scss";
 import { Comment } from "@/components/comment/comment";
 import { ARTICLES } from "@/utils/constants/mocks";
 import { COMMENTS } from "@/utils/constants/mocks";
@@ -53,10 +54,10 @@ export default function Article({ params: { slug } }: Props) {
 
   return (
     <>
-      <div>статья ${title}</div>
+      {/* <div>статья ${title}</div> */}
       <div className="article-page">
-        <div className="banner">
-          <div className="container">
+        <div className={s.banner}>
+          <div className={s.container}>
             <h1>{title}</h1>
 
             <div className="article-meta">
@@ -69,29 +70,29 @@ export default function Article({ params: { slug } }: Props) {
                 </a>
                 <span className="date">{createdAt}</span>
               </div>
-              <button className="btn btn-sm btn-outline-secondary">
+              <button className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}>
                 <i className="ion-plus-round"></i>
                 &nbsp; {author.following ? "Follow" : "Unfollow"}{" "}
                 {author.username}
                 <span className="counter">()</span>
               </button>
               &nbsp;&nbsp;
-              <button className="btn btn-sm btn-outline-primary">
+              <button className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}>
                 <i className="ion-heart"></i>
                 &nbsp; Favorite Post{" "}
                 <span className="counter">({favoritesCount})</span>
               </button>
-              <button className="btn btn-sm btn-outline-secondary">
+              <button className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}>
                 <i className="ion-edit"></i> Edit Article
               </button>
-              <button className="btn btn-sm btn-outline-danger">
+              <button className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}>
                 <i className="ion-trash-a"></i> Delete Article
               </button>
             </div>
           </div>
         </div>
 
-        <div className="container page">
+        <div className={s.container}>
           <div className="row article-content">
             <div className="col-md-12">
               <p>{body}</p>
@@ -127,19 +128,19 @@ export default function Article({ params: { slug } }: Props) {
                 </a>
                 <span className="date">{}</span>
               </div>
-              <button className="btn btn-sm btn-outline-secondary">
+              <button className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}>
                 <i className="ion-plus-round"></i>
                 &nbsp; Follow {author.username}
               </button>
               &nbsp;
-              <button className="btn btn-sm btn-outline-primary">
+              <button className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}>
                 <i className="ion-heart"></i>
                 &nbsp; Favorite Article <span className="counter">(29)</span>
               </button>
-              <button className="btn btn-sm btn-outline-secondary">
+              <button className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}>
                 <i className="ion-edit"></i> Edit Article
               </button>
-              <button className="btn btn-sm btn-outline-danger">
+              <button className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}>
                 <i className="ion-trash-a"></i> Delete Article
               </button>
             </div>
@@ -157,11 +158,8 @@ export default function Article({ params: { slug } }: Props) {
                   ></textarea>
                 </div>
                 <div className="card-footer">
-                  <img
-                    src={author.image}
-                    className="comment-author-img"
-                  />
-                  <button className="btn btn-sm btn-primary">
+                  <img src={author.image} className="comment-author-img" />
+                  <button className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}>
                     Post Comment
                   </button>
                 </div>
@@ -169,7 +167,7 @@ export default function Article({ params: { slug } }: Props) {
             </div>
           </div>
           {COMMENTS.comments.map((comment) => (
-            <Comment key={comment.id} comment={comment}/>
+            <Comment key={comment.id} comment={comment} />
           ))}
 
           {/* КАРТОЧКА НАПИСАННОГО КОММЕНТАРИЯ */}

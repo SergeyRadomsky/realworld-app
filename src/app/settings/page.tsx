@@ -1,61 +1,61 @@
+import s from "./style.module.scss";
+
 export default function Settings() {
   return (
-    <div className="settings-page">
-      <div className="container page">
+    <div className={s.settingsPage}>
+      <div className={`${s.container} ${s.page}`}>
         <div className="row">
-          <div className="col-md-6 offset-md-3 col-xs-12">
-            <h1 className="text-xs-center">Your Settings</h1>
+          <div className={s.flexContainer}>
+            <h1 className={s.yourSettings}>Your Settings</h1>
 
-            <ul className="error-messages">
+            {/* <ul className="error-messages">
               <li>That name is required</li>
-            </ul>
+            </ul> */}
 
             <form>
-              <fieldset>
-                <fieldset className="form-group">
-                  <input
-                    className="form-control"
-                    type="text"
-                    placeholder="URL of profile picture"
-                  />
-                </fieldset>
-                <fieldset className="form-group">
-                  <input
-                    className="form-control form-control-lg"
-                    type="text"
-                    placeholder="Your Name"
-                  />
-                </fieldset>
-                <fieldset className="form-group">
-                  <textarea
-                    className="form-control form-control-lg"
-                    // rows="8"
-                    placeholder="Short bio about you"
-                  ></textarea>
-                </fieldset>
-                <fieldset className="form-group">
-                  <input
-                    className="form-control form-control-lg"
-                    type="text"
-                    placeholder="Email"
-                  />
-                </fieldset>
-                <fieldset className="form-group">
-                  <input
-                    className="form-control form-control-lg"
-                    type="password"
-                    placeholder="New Password"
-                  />
-                </fieldset>
-                <button className="btn btn-lg btn-primary pull-xs-right">
-                  Update Settings
-                </button>
+              <fieldset className={`${s.formGroup} ${s.formEl}`}>
+                <input
+                  className={s.formСontrol}
+                  type="text"
+                  placeholder="URL of profile picture"
+                />
               </fieldset>
+              <fieldset className={`${s.formGroup} ${s.formEl}`}>
+                <input
+                  className={s.formСontrol}
+                  type="text"
+                  placeholder="Your Name"
+                />
+              </fieldset>
+              <fieldset className={`${s.formGroup} ${s.formEl}`}>
+                <textarea
+                  className={s.formСontrol}
+                  // rows="8"
+                  placeholder="Short bio about you"
+                ></textarea>
+              </fieldset>
+              <fieldset className={`${s.formGroup} ${s.formEl}`}>
+                <input
+                  className={s.formСontrol}
+                  type="text"
+                  placeholder="Email"
+                />
+              </fieldset>
+              <fieldset className={`${s.formGroup} ${s.formEl}`}>
+                <input
+                  className={s.formСontrol}
+                  type="password"
+                  placeholder="New Password"
+                />
+              </fieldset>
+              <button className={`${s.btn} ${s.btnLg} ${s.formEl}`}>
+                Update Settings
+              </button>
             </form>
             <hr />
-            <button className="btn btn-outline-danger">
-              Or click here to logout.
-            </button>
+            <p className={s.register}>
+              <a href="/register">Need an account?</a>
+            </p>
           </div>
         </div>
       </div>

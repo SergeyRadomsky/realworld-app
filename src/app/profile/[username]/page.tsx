@@ -1,4 +1,7 @@
 import { ARTICLES } from "@/utils/constants/mocks";
+import s from "./style.module.scss";
+import { Article } from "@/components/articleMini/article";
+import { Pagination } from "@/components/pagination/pagination";
 
 type Props = {
   params: {
@@ -23,7 +26,7 @@ export default function Profile({ params: { username } }: Props) {
   if (!selectedProfile) {
     return <div>Пользователь {username} не найден</div>;
   }
-  
+
   const {
     title,
     description,
@@ -35,51 +38,61 @@ export default function Profile({ params: { username } }: Props) {
     favoritesCount,
     author,
   } = selectedProfile;
-  
+
   return (
     <div className="profile-page">
-      <div className="user-info">
-        <div className="container">
+      <div className={s.userInfo}>
+        <div className={s.container}>
           <div className="row">
-            <div className="col-xs-12 col-md-10 offset-md-1">
-              <img src="http://i.imgur.com/Qr71crq.jpg" className="user-img" />
-              <h4>${author.username}</h4>
-              <p>
+            <div className={s.flexContainer}>
+              <img src="http://i.imgur.com/Qr71crq.jpg" className={s.userImg} />
+              <h4>{author.username}</h4>
+              {/* <p>
                 Cofounder @GoThinkster, lived in Aol{`'`}s HQ for a few months,
                 kinda looks like Peeta from the Hunger Games
-              </p>
-              <button className="btn btn-sm btn-outline-secondary action-btn">
-                <i className="ion-plus-round"></i>
-                &nbsp; Follow Eric Simons
-              </button>
-              <button className="btn btn-sm btn-outline-secondary action-btn">
-                <i className="ion-gear-a"></i>
-                &nbsp; Edit Profile Settings
-              </button>
+              </p> */}
+              <div className={s.btnProfile}>
+                <button className={`${s.btn} ${s.actionBtn} ${s.formEl}`}>
+                  Follow Eric Simons
+                </button>
+              </div>
+              {/* <button className="btn btn-sm btn-outline-secondary action-btn">
+                Edit Profile Settings
+              </button> */}
             </div>
           </div>
         </div>
       </div>
 
-      <div className="container">
+      <div className={s.container}>
         <div className="row">
-          <div className="col-xs-12 col-md-10 offset-md-1">
-            <div className="articles-toggle">
-              <ul className="nav nav-pills outline-active">
+          <div className={s.flexContainer}>
+
+
+            <div className={s.feedToggle}>
+              <ul
+                className={`${s.navContent} ${s.navPills} ${s.outlineActive}`}
+              >
                 <li className="nav-item">
-                  <a className="nav-link active" href="">
+                  <a className={`${s.navLink} ${s.navLinkActive}`} href="">
                     My Articles
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="">
+                  <a className={`${s.navLink}`} href="">
                     Favorited Articles
                   </a>
                 </li>
               </ul>
             </div>
 
-            <div className="article-preview">
+            {ARTICLES.articles.map((article) => (
+              <Article key={article.slug} article={article} />
+            ))}
+            {/* ПАГИНАЦИЯ */}
+            <Pagination/>
+            
+            {/* <div className="article-preview">
               <div className="article-meta">
                 <a href="/profile/eric-simons">
                   <img src="http://i.imgur.com/Qr71crq.jpg" />
@@ -110,9 +123,9 @@ export default function Profile({ params: { username } }: Props) {
                   </li>
                 </ul>
               </a>
-            </div>
+            </div> */}
 
-            <div className="article-preview">
+            {/* <div className="article-preview">
               <div className="article-meta">
                 <a href="/profile/albert-pai">
                   <img src="http://i.imgur.com/N4VcUeJ.jpg" />
@@ -139,20 +152,7 @@ export default function Profile({ params: { username } }: Props) {
                   <li className="tag-default tag-pill tag-outline">Song</li>
                 </ul>
               </a>
-            </div>
-
-            <ul className="pagination">
-              <li className="page-item active">
-                <a className="page-link" href="">
-                  1
-                </a>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="">
-                  2
-                </a>
-              </li>
-            </ul>
+            </div> */}
           </div>
         </div>
       </div>
