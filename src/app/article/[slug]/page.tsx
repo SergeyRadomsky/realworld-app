@@ -59,35 +59,47 @@ export default function Article({ params: { slug } }: Props) {
         <div className={s.banner}>
           <div className={s.container}>
             <h1>{title}</h1>
-
             <div className="article-meta">
-              <a href={`/profile/${author.username}`}>
-                <img src={author.image} />
-              </a>
-              <div className="info">
-                <a href={`/profile/${author.username}`} className="author">
-                  {author.username}
+              <div className={s.nameDate}>
+                <a href={`/profile/${author.username}`}>
+                  <img src={author.image} />
                 </a>
-                <span className="date">{createdAt}</span>
+                <div className={s.info}>
+                  <a href={`/profile/${author.username}`} className="author">
+                    {author.username}
+                  </a>
+                  <span className="date">{createdAt}</span>
+                </div>
               </div>
-              <button className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}>
-                <i className="ion-plus-round"></i>
-                &nbsp; {author.following ? "Follow" : "Unfollow"}{" "}
-                {author.username}
-                <span className="counter">()</span>
-              </button>
-              &nbsp;&nbsp;
-              <button className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}>
-                <i className="ion-heart"></i>
-                &nbsp; Favorite Post{" "}
-                <span className="counter">({favoritesCount})</span>
-              </button>
-              <button className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}>
-                <i className="ion-edit"></i> Edit Article
-              </button>
-              <button className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}>
-                <i className="ion-trash-a"></i> Delete Article
-              </button>
+              <div className={s.bannerBtnGroup}>
+                <div className={s.blockBtn}>
+                  <button className={`${s.btn} ${s.btnUpperLine}`}>
+                    <i className="ion-plus-round"></i>
+                    &nbsp; {author.following ? "Follow" : "Unfollow"}{" "}
+                    {author.username}
+                    <span className="counter"></span>
+                  </button>
+                  <button
+                    className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnUpperLine}`}
+                  >
+                    <i className="ion-heart"></i>
+                    &nbsp; Favorite Post{" "}
+                    <span className="counter">({favoritesCount})</span>
+                  </button>
+                </div>
+                {/* <div className={s.blockBtn}>
+                  <button
+                    className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnUpperLine}`}
+                  >
+                    <i className="ion-edit"></i> Edit Article
+                  </button>
+                  <button
+                    className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnUpperLine}`}
+                  >
+                    <i className="ion-trash-a"></i> Delete Article
+                  </button>
+                </div> */}
+              </div>
             </div>
           </div>
         </div>
@@ -102,15 +114,15 @@ export default function Article({ params: { slug } }: Props) {
                 work.
               </p> */}
 
-              <ul className="tag-list">
+              <ul className={s.tagList}>
                 {tagList.map((tag) => (
-                  <li key={tag} className="tag-default tag-pill tag-outline">
+                  <li
+                    key={tag}
+                    className={`${s.tagDefault} ${s.tagPill} ${s.tagOutline}`}
+                  >
                     {tag}
                   </li>
                 ))}
-                {/* <li className="tag-default tag-pill tag-outline">realworld</li>
-                <li className="tag-default tag-pill tag-outline">
-                  implementations */}
               </ul>
             </div>
           </div>
@@ -119,52 +131,67 @@ export default function Article({ params: { slug } }: Props) {
 
           <div className="article-actions">
             <div className="article-meta">
-              <a href="profile.html">
-                <img src={author.image} />
-              </a>
-              <div className="info">
-                <a href="" className="author">
-                  {author.username}
+              <div className={s.nameDate}>
+                <a href="profile.html">
+                  <img src={author.image} />
                 </a>
-                <span className="date">{}</span>
+                <div className={s.info}>
+                  <a href="" className="author">
+                    {author.username}
+                  </a>
+                  <span className="date">{createdAt}</span>
+                </div>
+                <div className={s.blockBtn}>
+                  <button className={`${s.btn} ${s.btnSmall}`}>
+                    <i className="ion-plus-round"></i>
+                   Follow {author.username}
+                  </button>
+                  &nbsp;
+                  <button
+                    className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}
+                  >
+                    <i className="ion-heart"></i>
+                    Favorite Article{" "}
+                    <span className="counter">(29)</span>
+                  </button>
+                </div>
+                {/* <div className={s.unOwnerArticle}>
+                <button
+                  className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}
+                >
+                  <i className="ion-edit"></i> Edit Article
+                </button>
+                <button
+                  className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}
+                >
+                  <i className="ion-trash-a"></i> Delete Article
+                </button>
+              </div> */}
               </div>
-              <button className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}>
-                <i className="ion-plus-round"></i>
-                &nbsp; Follow {author.username}
-              </button>
-              &nbsp;
-              <button className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}>
-                <i className="ion-heart"></i>
-                &nbsp; Favorite Article <span className="counter">(29)</span>
-              </button>
-              <button className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}>
-                <i className="ion-edit"></i> Edit Article
-              </button>
-              <button className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}>
-                <i className="ion-trash-a"></i> Delete Article
-              </button>
             </div>
           </div>
 
           {/* ПОЛЕ ДЛЯ НАПИСАНИЯ КОММЕНТАРИЯ */}
           <div className="row">
-            <div className="col-xs-12 col-md-8 offset-md-2">
-              <form className="card comment-form">
-                <div className="card-block">
-                  <textarea
-                    className="form-control"
-                    placeholder="Write a comment..."
-                    // rows="3"
-                  ></textarea>
-                </div>
-                <div className="card-footer">
-                  <img src={author.image} className="comment-author-img" />
-                  <button className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}>
-                    Post Comment
-                  </button>
-                </div>
-              </form>
-            </div>
+            <form className={`${s.card} ${s.cardForm}`}>
+              <div className="card-block">
+                {/* <fieldset className={`${s.formGroup} ${s.formEl}`}> */}
+                <textarea
+                  className={s.formControl}
+                  // rows="8"
+                  placeholder="Write  a comment..."
+                ></textarea>
+                {/* </fieldset> */}
+              </div>
+              <div className={s.cardAfterComment}>
+                <img src={author.image} className="comment-author-img" />
+                <button
+                  className={`${s.btn} ${s.btnOutLinePrimary} ${s.btnSmall}`}
+                >
+                  Post Comment
+                </button>
+              </div>
+            </form>
           </div>
           {COMMENTS.comments.map((comment) => (
             <Comment key={comment.id} comment={comment} />
